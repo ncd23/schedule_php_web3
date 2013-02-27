@@ -1,0 +1,324 @@
+
+@font-face {
+    font-family:'ClimaconsRegular';
+    src: url('../font/climacons-webfont.eot');
+    src: url('../font/climacons-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/climacons-webfont.woff') format('woff'),
+         url('../font/climacons-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400,700,900);
+
+html { height: 100%; font-size: 100%;}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    background: url('grey.png') repeat;
+    font-weight: 400;
+    font-size: 1em;
+    color: #333;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+container {
+	width: 100%;
+	margin-top:10%;
+	position: relative;
+}
+
+h1{
+	margin: 0 auto;
+	text-align: center;
+	text-transform: capitalize;
+	font-weight: 300;
+	color: #686869;
+	font-size: 2.5em;
+}
+
+
+
+.rb-grid {
+	list-style: none;
+	text-align: center;
+	margin: 0 auto;
+	padding: 5%; 
+}
+
+.rb-grid li {
+	width: 24%;
+	height: 15em;
+	margin: 0.5%;
+	background: #8CC7DF;
+	color: #fff;
+	display: block;
+	float: left;
+	padding: 1.6em;
+	cursor: pointer;
+	position: relative;
+}
+
+
+.rb-grid li h2 {
+	font-size: 2.6em;
+	font-weight: 100;
+}
+
+.rb-grid li[class^="icon-"]:before,
+.rb-grid li[class*=" icon-"]:before {
+	font-size: 10em;
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	line-height: 3;
+	opacity: 0.4;
+	text-align: right;
+	pointer-events: none;
+}
+
+.rb-temp {
+	display: block;
+	font-size: 2em;
+	opacity: 0.5;
+	-webkit-transition: opacity 0.3s ease-in-out;
+	-moz-transition: opacity 0.3s ease-in-out;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.rb-grid li:hover .rb-temp {
+	opacity: 1;
+}
+
+.rb-overlay {
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	z-index: -1;
+	pointer-events: none;
+	cursor: default;
+}
+
+.rb-close {
+	position: absolute;
+	top: 0.4em;
+	right: 0.4em;
+	width: 2em;
+	height: 2em;
+	text-indent: -9000px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.rb-close::before {
+	content: 'x';
+	font-weight: 100;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 3em;
+	line-height: 0.6;
+	text-align: center;
+	text-indent: 0px;
+}
+
+.rb-week {
+	width: 100%;
+	height: 100%;
+}
+
+.rb-week > div {
+	width: 15%;
+	height: 100%;
+	float: left;
+	position: relative;
+	padding: 3% 0;
+}
+
+.rb-week > div:first-child {
+	width: 25%;
+}
+
+.rb-week span {
+	padding: 5% 0;
+	font-size: 2em;
+	font-weight: 100;
+	display: block;
+	margin: auto 0;
+	height: 30%;
+	width: 100%;
+	line-height: 0.8;
+}
+
+.rb-week p.time {
+	padding: 5% 0;
+	font-size: 2em;
+	font-weight: 100;
+	display: block;
+	margin: auto 0;
+	height: 30%;
+	width: 100%;
+	line-height: 0.8;
+	
+}
+
+.rb-week p.task {
+	padding: 30% 0;
+	font-size: 2em;
+	font-weight: 100;
+	display: block;
+	margin: auto 0;
+	height: 30%;
+	width: 100%;
+	line-height: 0.8;
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	writing-mode: lr-tb;
+}
+.rb-week span.rb-city {
+	font-weight: 700;
+	padding: 1% 10%;
+	font-size: 1em;
+	line-height: 1.2;
+}
+
+.rb-week [class^="icon-"]:before {
+	font-size: 2.5em;
+	font-weight: normal;
+}
+
+.rb-week > div:first-child [class^="icon-"] {
+	opacity: 0.1;
+}
+
+/* Colors */
+
+/* Grid */
+.rb-grid li:nth-child(1) { border: 1px solid #686869; background: none; }
+.rb-grid li:nth-child(2) { background: #5ADCE6; } /*blue*/
+.rb-grid li:nth-child(3) { background: #FA2A6F; } /*pink*/
+.rb-grid li:nth-child(4) { background: #D648DB; } /*purple*/
+.rb-grid li:nth-child(5) { background: #FCBA3F; } /*orange*/
+.rb-grid li:nth-child(6) { background: #CBD119; } /*green/yellow*/
+.rb-grid li:nth-child(7) { background: #90D470; } /*green*/
+.rb-grid li:nth-child(8) { background: #63D6C7; }/* turquoise */
+
+
+/* Overlay Columns */
+/* .rb-grid li:nth-child(1) .rb-week > div:nth-child(1) { background: #3399CC; } */
+
+/* blue */
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(1) { background: #5ADCE6; }
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(2) { background: #50D0D9; }
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(3) { background: #42BEC7; }
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(4) { background: #36B1BA; }
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(5) { background: #2CA0A8; }
+.rb-grid li:nth-child(2) .rb-week > div:nth-child(6) { background: #238F96; }
+
+/* pink */
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(1) {background: #FA2A6F; }
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(2) { background: #ED0260; }
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(3) { background: #DB0B49; }
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(4) { background: #C4083D; }
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(5) { background: #9C0226; }
+.rb-grid li:nth-child(3) .rb-week > div:nth-child(6) { background: #850127; }
+
+/* purple */
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(1) { background: #E432ED; }
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(2) { background: #D71FE0; }
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(3) { background: #C40EC4; }
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(4) { background: #B007B0; }
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(5) { background: #9E03A3; }
+.rb-grid li:nth-child(4) .rb-week > div:nth-child(6) { background: #88018F; }
+
+/* orange */
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(1) { background: #FCBA3F; }
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(2) { background: #FAAD07; }
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(3) { background: #F79D36; }
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(4) { background: #ED8713; }
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(5) { background: #E6851E; }
+.rb-grid li:nth-child(5) .rb-week > div:nth-child(6) { background: #E87502; }
+
+/*green/yellow*/
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(1) { background: #CFDE2A; }
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(2) { background: #CBD119; }
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(3) { background: #B4BA09; }
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(4) { background: #A8AD09; }
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(5) { background: #A1A608; }
+.rb-grid li:nth-child(6) .rb-week > div:nth-child(6) { background: #858A08; }
+
+/* green */
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(1) { background: #90D470; }
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(2) { background: #84C765; }
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(3) { background: #77BD57; }
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(4) { background: #69B048; }
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(5) { background: #5B9E3C; }
+.rb-grid li:nth-child(7) .rb-week > div:nth-child(6) { background: #4C912C; }
+
+/* turquoise */
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(1) { background: #63D6C7; }
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(2) { background: #64D1C3; }
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(3) { background: #58C4B6; }
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(4) { background: #4CB5A7; }
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(5) { background: #3EA89A; }
+.rb-grid li:nth-child(8) .rb-week > div:nth-child(6) { background: #339C8E; }
+
+@media screen and (max-width: 63.125em) {
+	
+	.rb-grid li,
+	.rb-grid li.rb-span-2,
+	.rb-grid li.rb-span-4 {
+		width: 100%;
+		height: 10em;
+		text-align: left;
+	}
+
+	.rb-grid li[class^="icon-"]:before,
+	.rb-grid li[class*=" icon-"]:before {
+		font-size: 6em;
+		left: auto;
+		right: 0;
+		line-height: 2.5;
+	}
+
+	.rb-grid li > div {
+		text-align: center;
+	}
+}
